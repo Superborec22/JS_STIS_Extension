@@ -1,0 +1,19 @@
+{
+
+ "manifest_version": 2,
+ "incognito": "split",
+ "name": "AUTOSTIS",
+"description": "Automatické vyplňování formulářů pro STIS podle nejčastějších případů",
+"version": "2.0",
+"content_scripts": [
+ {
+ "matches": ["https://stis.starnet.cz/*", "https://otrs2.starnet.cz/*"],
+  "js": ["content.js"],
+  "run_at": "document_end"
+ }
+],
+"permissions": ["activeTab", "storage", "clipboardWrite", "https://ajax.googleapis.com/", "https://www.survio.com/survey/", "https://otrs2.starnet.cz/"],
+ "browser_action": {
+ "default_icon": "icon.png",
+ "default_popup": "popup.html"
+ }}
